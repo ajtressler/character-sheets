@@ -1,0 +1,3219 @@
+<p style="text-align: center;">
+<img src="http://vignette4.wikia.nocookie.net/whitewolf/images/8/84/AdventureLogo.png" style="max-height: 100px;" />
+</p>
+
+<div class="sheet-3colrow">
+    <div class="sheet-col">
+        <label>Name:</label><input type="text" name="attr_name" /> <BR>
+        <label>Player:</label><input type="text" name="attr_player" /> <BR>
+    	<label>Inspiration:</label><input type="text" name="attr_Inspiration" /> <BR>
+        <label>Origin:</label><input type="text" name="attr_Origin" /> <BR>
+    </div>
+    <div class="sheet-col">
+        <label>Nature:</label><input type="text" name="attr_Nature" /> <BR>
+        <label>Virtue:</label><input type="text" name="attr_Virtue" /> <BR>
+        <label>Vice:</label><input type="text" name="attr_Vice" /> <BR>
+		<label>Allegiance:</label><input type="text" name="attr_Allegiance" /> <BR>
+    </div>
+    <div class="sheet-col">
+        <label>Initiative:</label><input type="number" name="attr_InitiativePoints" value="(@{Dexterity}+@{Wits}+@{IntuitiveFacet}+@{InitBonus})" disabled="true" /><button type='roll' value='/roll d10+@{InitiativePoints} &{tracker} Initiative' name='roll_Initiative' /></button>
+		<BR>
+		<label>Walk:</label><input type="number" name="attr_Walk" value="@{Dexterity}+2" disabled="true" /> <BR>
+		<label>Run:</label><input type="number" name="attr_Run" value="@{Dexterity}+12" disabled="true" /> <BR>
+		<label>Sprint:</label><input type="number" name="attr_Sprint" value="(3*@{Dexterity})+20" disabled="true" /><BR>
+    </div>
+</div>
+
+<hr/>
+
+<h1 style="text-align: center; width:750px">Attributes</h1>
+
+<div class="sheet-3colrow">
+    <div class="sheet-col" style="width:250px">
+        <h3 style="text-align: center">Physical</h3>
+    </div>
+    <div class="sheet-col" style="width:245px">
+        <h3 style="text-align: center">Mental</h3>
+    </div>
+    <div class="sheet-col" style="width:245px">
+        <h3 style="text-align: center">Social</h3>
+    </div>
+</div>
+    <div class="sheet-col" style="width:120px; line-height:28px">
+        <h4 style="line-height:28px">Strength</h4>
+        <h4 style="line-height:28px">Dexterity</h4>
+        <h4 style="line-height:28px">Stamina</h4>
+    </div>
+    <div class="sheet-col" style="width:150px; line-height:28px">
+            <input type="radio" name="attr_Strength" value="1" checked="checked" />
+    		<span></span> <input type="radio" name="attr_Strength" value="2" />
+			<span></span> <input type="radio" name="attr_Strength" value="3" />
+			<span></span> <input type="radio" name="attr_Strength" value="4" />
+			<span></span> <input type="radio" name="attr_Strength" value="5" />
+			<span></span> <button type='roll' value='/roll (@{Strength}+@{WoundPenalty})d10>7 Strength' name='roll_Strength' /></button>
+        <div class="sheet-row">
+            <input type="radio" name="attr_Dexterity" value="1" checked="checked" />
+			<span></span> <input type="radio" name="attr_Dexterity" value="2" />
+			<span></span> <input type="radio" name="attr_Dexterity" value="3" />
+			<span></span> <input type="radio" name="attr_Dexterity" value="4" />
+			<span></span> <input type="radio" name="attr_Dexterity" value="5" />
+			<span></span> <button type='roll' value='/roll (@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})d10>7 Dexterity' name='roll_Dexterity' /></button>
+        </div>
+        <div class="sheet-row">
+            <input type="radio" name="attr_Stamina" value="1" checked="checked" />
+			<span></span> <input type="radio" name="attr_Stamina" value="2" />
+			<span></span> <input type="radio" name="attr_Stamina" value="3" />
+			<span></span> <input type="radio" name="attr_Stamina" value="4" />
+			<span></span> <input type="radio" name="attr_Stamina" value="5" />
+			<span></span> <button type='roll' value='/roll (@{Stamina}+@{WoundPenalty})d10>7 Stamina' name='roll_Stamina' /></button>
+        </div>
+    </div>
+	
+	    <div class="sheet-col" style="width:5px">
+    </div>
+    <div class="sheet-col" style="width:115px; line-height:28px">
+        <h4 style="line-height:28px">Perception</h4>
+		<h4 style="line-height:28px">Intelligence</h4>
+        <h4 style="line-height:28px">Wits</h4>
+        
+    </div>
+	<div class="sheet-col" style="width:150px; line-height:28px">
+    <div class="sheet-row">
+            <input type="radio" name="attr_Perception" value="1" checked="checked" />
+			<span></span> <input type="radio" name="attr_Perception" value="2" />
+			<span></span> <input type="radio" name="attr_Perception" value="3" />
+			<span></span> <input type="radio" name="attr_Perception" value="4" />
+			<span></span> <input type="radio" name="attr_Perception" value="5" />
+			<span></span> <button type='roll' value='/roll @{Perception}d10>7 Perception' name='roll_Perception' /></button>
+        </div>
+	
+        <input type="radio" name="attr_Intelligence" value="1" checked="checked" />
+		<span></span> <input type="radio" name="attr_Intelligence" value="2" />
+		<span></span> <input type="radio" name="attr_Intelligence" value="3" />
+		<span></span> <input type="radio" name="attr_Intelligence" value="4" />
+		<span></span> <input type="radio" name="attr_Intelligence" value="5" />
+		<span></span> <button type='roll' value='/roll @{Intelligence}d10>7 Intelligence' name='roll_Intelligence' /></button>
+        <div class="sheet-row">
+            <input type="radio" name="attr_Wits" value="1" checked="checked" />
+			<span></span> <input type="radio" name="attr_Wits" value="2" />
+			<span></span> <input type="radio" name="attr_Wits" value="3" />
+			<span></span> <input type="radio" name="attr_Wits" value="4" />
+			<span></span> <input type="radio" name="attr_Wits" value="5" />
+			<span></span> <button type='roll' value='/roll @{Wits}d10>7 Wits' name='roll_Wits' /></button>
+        </div>
+        
+    </div>
+	
+    <div class="sheet-col" style="width:105px; line-height:28px">
+        <h4 style="line-height:28px">Appearance</h4>
+		<h4 style="line-height:28px">Manipulation</h4>
+        <h4 style="line-height:28px">Charisma</h4>
+        
+    </div>
+	<div class="sheet-col" style="width:160px; line-height:28px" align="right">
+       <div class="sheet-row">
+            
+			<input type="radio" name="attr_Appearance" value="1" checked="checked" />
+			<span></span> <input type="radio" name="attr_Appearance" value="2" />
+			<span></span> <input type="radio" name="attr_Appearance" value="3" />
+			<span></span> <input type="radio" name="attr_Appearance" value="4" />
+			<span></span> <input type="radio" name="attr_Appearance" value="5" />
+			<span></span> <button type='roll' value='/roll @{Appearance}d10>7 Appearance' name='roll_Appearance' /></button>
+        </div>
+		<div class="sheet-row">
+            <input type="radio" name="attr_Manipulation" value="1" checked="checked" />
+			<span></span> <input type="radio" name="attr_Manipulation" value="2" />
+			<span></span> <input type="radio" name="attr_Manipulation" value="3" />
+			<span></span> <input type="radio" name="attr_Manipulation" value="4" />
+			<span></span> <input type="radio" name="attr_Manipulation" value="5" />
+			<span></span> <button type='roll' value='/roll @{Manipulation}d10>7 Manipulation' name='roll_Manipulation' /></button>
+        </div>
+        
+        <input type="radio" name="attr_Charisma" value="1" checked="checked" />
+		<span></span> <input type="radio" name="attr_Charisma" value="2" />
+		<span></span> <input type="radio" name="attr_Charisma" value="3" />
+		<span></span> <input type="radio" name="attr_Charisma" value="4" />
+		<span></span> <input type="radio" name="attr_Charisma" value="5" />
+		<span></span> <button type='roll' value='/roll @{Charisma}d10>7 Charisma' name='roll_Charisma' /></button>
+    </div>
+
+</div>
+
+<hr/>
+
+<h1 style="text-align: center; width:750px">Abilities</h1>
+<div class="sheet-3colrow">
+    <div class="sheet-col" style="width:245px">
+        <h3 style="text-align: center">Physical</h3>
+    </div>
+    <div class="sheet-col" style="width:245px">
+        <h3 style="text-align: center">Mental</h3>
+    </div>
+    <div class="sheet-col" style="width:245px">
+        <h3 style="text-align: center">Social</h3>
+    </div>
+</div>
+
+<div class="sheet-colrow">
+    <div class="sheet-col" style="width:105px; line-height:28px">
+        <h4 style="line-height:28px">STRENGTH</h4>
+        <h4 style="line-height:28px">Archery</h4>
+        <h4 style="line-height:28px">Brawl</h4>
+        <h4 style="line-height:28px">Might</h4>
+        <h4 style="line-height:28px">DEXTERITY</h4>
+        <h4 style="line-height:28px">Athletics</h4>
+        <h4 style="line-height:28px">Firearms</h4>
+        <h4 style="line-height:28px">Legerdemain</h4>
+        <h4 style="line-height:28px">Martial Arts</h4>
+        <h4 style="line-height:28px">Melee</h4>
+		<h4 style="line-height:28px">Stealth</h4>
+		<h4 style="line-height:28px">STAMINA</h4>
+		<h4 style="line-height:28px">Endurance</h4>
+		<h4 style="line-height:28px">Resistance</h4>
+    </div>
+    <div class="sheet-col" style="width:160px; line-height:28px">
+	<BR style="line-height:28px">
+            <input type="radio" name="attr_Archery" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Archery" value="1" /><span></span>
+			<input type="radio" name="attr_Archery" value="2" /><span></span>
+			<input type="radio" name="attr_Archery" value="3" /><span></span>
+			<input type="radio" name="attr_Archery" value="4" /><span></span>
+			<input type="radio" name="attr_Archery" value="5" /><span></span>
+			<input type="radio" name="attr_Archery" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Strength}+@{Archery}+@{WoundPenalty})d10>7 Strength and Archery' name='roll_StrengthArchery' /></button>
+       
+	   <div class="sheet-row">
+            <input type="radio" name="attr_Brawl" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Brawl" value="1" /><span></span>
+			<input type="radio" name="attr_Brawl" value="2" /><span></span>
+			<input type="radio" name="attr_Brawl" value="3" /><span></span>
+			<input type="radio" name="attr_Brawl" value="4" /><span></span>
+			<input type="radio" name="attr_Brawl" value="5" /><span></span>
+			<input type="radio" name="attr_Brawl" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Strength}+@{Brawl}+@{WoundPenalty})d10>7 Strength and Brawl' name='roll_StrengthBrawl' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Might" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Might" value="1" /><span></span>
+			<input type="radio" name="attr_Might" value="2" /><span></span>
+			<input type="radio" name="attr_Might" value="3" /><span></span>
+			<input type="radio" name="attr_Might" value="4" /><span></span>
+			<input type="radio" name="attr_Might" value="5" /><span></span>
+			<input type="radio" name="attr_Might" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Strength}+@{Might}+@{WoundPenalty})d10>7 Strength and Might' name='roll_StrengthMight' /></button>
+        </div>
+		
+		<BR style="line-height:28px">
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Athletics" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Athletics" value="1" /><span></span>
+			<input type="radio" name="attr_Athletics" value="2" /><span></span>
+			<input type="radio" name="attr_Athletics" value="3" /><span></span>
+			<input type="radio" name="attr_Athletics" value="4" /><span></span>
+			<input type="radio" name="attr_Athletics" value="5" /><span></span>
+			<input type="radio" name="attr_Athletics" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Dexterity}+@{Athletics}+@{WoundPenalty}+@{ArmorPenalty})d10>7 Dexterity and Athletics' name='roll_DexterityAthletics' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Firearms" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Firearms" value="1" /><span></span>
+			<input type="radio" name="attr_Firearms" value="2" /><span></span>
+			<input type="radio" name="attr_Firearms" value="3" /><span></span>
+			<input type="radio" name="attr_Firearms" value="4" /><span></span>
+			<input type="radio" name="attr_Firearms" value="5" /><span></span>
+			<input type="radio" name="attr_Firearms" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Dexterity}+@{Firearms}+@{WoundPenalty}+@{ArmorPenalty})d10>7 Dexterity and Firearms' name='roll_DexterityFirearms' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Legerdemain" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Legerdemain" value="1" /><span></span>
+			<input type="radio" name="attr_Legerdemain" value="2" /><span></span>
+			<input type="radio" name="attr_Legerdemain" value="3" /><span></span>
+			<input type="radio" name="attr_Legerdemain" value="4" /><span></span>
+			<input type="radio" name="attr_Legerdemain" value="5" /><span></span>
+			<input type="radio" name="attr_Legerdemain" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Dexterity}+@{Legerdemain}+@{WoundPenalty}+@{ArmorPenalty})d10>7 Dexterity and Legerdemain' name='roll_DexterityLegerdemain' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_MartialArts" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_MartialArts" value="1" /><span></span>
+			<input type="radio" name="attr_MartialArts" value="2" /><span></span>
+			<input type="radio" name="attr_MartialArts" value="3" /><span></span>
+			<input type="radio" name="attr_MartialArts" value="4" /><span></span>
+			<input type="radio" name="attr_MartialArts" value="5" /><span></span>
+			<input type="radio" name="attr_MartialArts" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Dexterity}+@{MartialArts}+@{WoundPenalty}+@{ArmorPenalty})d10>7 Dexterity and Martial Arts' name='roll_DexterityMartialArts' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Melee" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Melee" value="1" /><span></span>
+			<input type="radio" name="attr_Melee" value="2" /><span></span>
+			<input type="radio" name="attr_Melee" value="3" /><span></span>
+			<input type="radio" name="attr_Melee" value="4" /><span></span>
+			<input type="radio" name="attr_Melee" value="5" /><span></span>
+			<input type="radio" name="attr_Melee" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Dexterity}+@{Melee}+@{WoundPenalty}+@{ArmorPenalty})d10>7 Dexterity and Melee' name='roll_DexterityMelee' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Stealth" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Stealth" value="1" /><span></span>
+			<input type="radio" name="attr_Stealth" value="2" /><span></span>
+			<input type="radio" name="attr_Stealth" value="3" /><span></span>
+			<input type="radio" name="attr_Stealth" value="4" /><span></span>
+			<input type="radio" name="attr_Stealth" value="5" /><span></span>
+			<input type="radio" name="attr_Stealth" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Dexterity}+@{Stealth}+@{WoundPenalty}+@{ArmorPenalty})d10>7 Dexterity and Stealth' name='roll_DexterityStealth' /></button>
+        </div>
+		
+		<BR style="line-height:28px">
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Endurance" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Endurance" value="1" /><span></span>
+			<input type="radio" name="attr_Endurance" value="2" /><span></span>
+			<input type="radio" name="attr_Endurance" value="3" /><span></span>
+			<input type="radio" name="attr_Endurance" value="4" /><span></span>
+			<input type="radio" name="attr_Endurance" value="5" /><span></span>
+			<input type="radio" name="attr_Endurance" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Stamina}+@{Endurance}+@{WoundPenalty})d10>7 Stamina and Endurance' name='roll_StaminaEndurance' /></button>
+        </div>
+		
+		<div class="sheet-row">
+            <input type="radio" name="attr_Resistance" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Resistance" value="1" /><span></span>
+			<input type="radio" name="attr_Resistance" value="2" /><span></span>
+			<input type="radio" name="attr_Resistance" value="3" /><span></span>
+			<input type="radio" name="attr_Resistance" value="4" /><span></span>
+			<input type="radio" name="attr_Resistance" value="5" /><span></span>
+			<input type="radio" name="attr_Resistance" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Stamina}+@{Resistance}+@{WoundPenalty})d10>7 Stamina and Resistance' name='roll_StaminaResistance' /></button>
+        </div>
+		
+    </div>
+    <div class="sheet-col" style="width:105px; line-height:28px">
+        <h4 style="line-height:28px">PERCEPTION</h4>
+        <h4 style="line-height:28px">Awareness</h4>
+        <h4 style="line-height:28px">Investigation</h4>
+        <h4 style="line-height:28px">Navigation</h4>
+        <h4 style="line-height:28px">INTELLIGENCE</h4>
+        <h4 style="line-height:28px">Academics</h4>
+        <h4 style="line-height:28px">Bureaucracy</h4>
+        <h4 style="line-height:28px">Engineering</h4>
+        <h4 style="line-height:28px">Linguistics</h4>
+        <h4 style="line-height:28px">Medicine</h4>
+		<h4 style="line-height:28px">Science</h4>
+		<h4 style="line-height:28px">Survival</h4>
+		<h4 style="line-height:28px">WITS</h4>
+		<h4 style="line-height:28px">Arts</h4>
+		<h4 style="line-height:28px">Drive</h4>
+		<h4 style="line-height:28px">Pilot</h4>
+		
+    </div>
+	
+    <div class="sheet-col" style="width:160px; line-height:28px" align="right">
+	<BR style="line-height:28px">
+         	<input type="radio" name="attr_Awareness" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Awareness" value="1" /><span></span>
+			<input type="radio" name="attr_Awareness" value="2" /><span></span>
+			<input type="radio" name="attr_Awareness" value="3" /><span></span>
+			<input type="radio" name="attr_Awareness" value="4" /><span></span>
+			<input type="radio" name="attr_Awareness" value="5" /><span></span>
+			<input type="radio" name="attr_Awareness" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Perception}+@{Awareness})d10>7 Perception and Awareness' name='roll_PerceptionAwareness' /></button>
+	
+	
+        <div class="sheet-row">
+            <input type="radio" name="attr_Investigation" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Investigation" value="1" /><span></span>
+			<input type="radio" name="attr_Investigation" value="2" /><span></span>
+			<input type="radio" name="attr_Investigation" value="3" /><span></span>
+			<input type="radio" name="attr_Investigation" value="4" /><span></span>
+			<input type="radio" name="attr_Investigation" value="5" /><span></span>
+			<input type="radio" name="attr_Investigation" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Perception}+@{Investigation})d10>7 Perception and Investigation' name='roll_PerceptionInvestigation' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Navigation" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Navigation" value="1" /><span></span>
+			<input type="radio" name="attr_Navigation" value="2" /><span></span>
+			<input type="radio" name="attr_Navigation" value="3" /><span></span>
+			<input type="radio" name="attr_Navigation" value="4" /><span></span>
+			<input type="radio" name="attr_Navigation" value="5" /><span></span>
+			<input type="radio" name="attr_Navigation" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Perception}+@{Navigation})d10>7 Perception and Navigation' name='roll_PerceptionNavigation' /></button>
+        </div>
+		
+		<BR style="line-height:28px">
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Academics" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Academics" value="1" /><span></span>
+			<input type="radio" name="attr_Academics" value="2" /><span></span>
+			<input type="radio" name="attr_Academics" value="3" /><span></span>
+			<input type="radio" name="attr_Academics" value="4" /><span></span>
+			<input type="radio" name="attr_Academics" value="5" /><span></span>
+			<input type="radio" name="attr_Academics" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Intelligence}+@{Academics})d10>7 Intelligence and Academics' name='roll_IntelligenceAcademics' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Bureaucracy" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Bureaucracy" value="1" /><span></span>
+			<input type="radio" name="attr_Bureaucracy" value="2" /><span></span>
+			<input type="radio" name="attr_Bureaucracy" value="3" /><span></span>
+			<input type="radio" name="attr_Bureaucracy" value="4" /><span></span>
+			<input type="radio" name="attr_Bureaucracy" value="5" /><span></span>
+			<input type="radio" name="attr_Bureaucracy" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Intelligence}+@{Bureaucracy})d10>7 Intelligence and Bureaucracy' name='roll_IntelligenceBureaucracy' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Engineering" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Engineering" value="1" /><span></span>
+			<input type="radio" name="attr_Engineering" value="2" /><span></span>
+			<input type="radio" name="attr_Engineering" value="3" /><span></span>
+			<input type="radio" name="attr_Engineering" value="4" /><span></span>
+			<input type="radio" name="attr_Engineering" value="5" /><span></span>
+			<input type="radio" name="attr_Engineering" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Intelligence}+@{Engineering})d10>7 Intelligence and Engineering' name='roll_IntelligenceEngineering' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Linguistics" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Linguistics" value="1" /><span></span>
+			<input type="radio" name="attr_Linguistics" value="2" /><span></span>
+			<input type="radio" name="attr_Linguistics" value="3" /><span></span>
+			<input type="radio" name="attr_Linguistics" value="4" /><span></span>
+			<input type="radio" name="attr_Linguistics" value="5" /><span></span>
+			<input type="radio" name="attr_Linguistics" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Intelligence}+@{Linguistics})d10>7 Intelligence and Linguistics' name='roll_IntelligenceLinguistics' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Medicine" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Medicine" value="1" /><span></span>
+			<input type="radio" name="attr_Medicine" value="2" /><span></span>
+			<input type="radio" name="attr_Medicine" value="3" /><span></span>
+			<input type="radio" name="attr_Medicine" value="4" /><span></span>
+			<input type="radio" name="attr_Medicine" value="5" /><span></span>
+			<input type="radio" name="attr_Medicine" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Intelligence}+@{Medicine})d10>7 Intelligence and Medicine' name='roll_IntelligenceMedicine' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Science" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Science" value="1" /><span></span>
+			<input type="radio" name="attr_Science" value="2" /><span></span>
+			<input type="radio" name="attr_Science" value="3" /><span></span>
+			<input type="radio" name="attr_Science" value="4" /><span></span>
+			<input type="radio" name="attr_Science" value="5" /><span></span>
+			<input type="radio" name="attr_Science" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Intelligence}+@{Science})d10>7 Intelligence and Science' name='roll_IntelligenceScience' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Survival" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Survival" value="1" /><span></span>
+			<input type="radio" name="attr_Survival" value="2" /><span></span>
+			<input type="radio" name="attr_Survival" value="3" /><span></span>
+			<input type="radio" name="attr_Survival" value="4" /><span></span>
+			<input type="radio" name="attr_Survival" value="5" /><span></span>
+			<input type="radio" name="attr_Survival" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Intelligence}+@{Survival})d10>7 Intelligence and Survival' name='roll_IntelligenceSurvival' /></button>
+        </div>
+		
+		<BR style="line-height:28px">
+		
+		<div class="sheet-row">
+            <input type="radio" name="attr_Arts" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Arts" value="1" /><span></span>
+			<input type="radio" name="attr_Arts" value="2" /><span></span>
+			<input type="radio" name="attr_Arts" value="3" /><span></span>
+			<input type="radio" name="attr_Arts" value="4" /><span></span>
+			<input type="radio" name="attr_Arts" value="5" /><span></span>
+			<input type="radio" name="attr_Arts" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Wits}+@{Arts})d10>7 Wits and Arts' name='roll_WitsArts' /></button>
+        </div>
+		
+		<div class="sheet-row">
+            <input type="radio" name="attr_Drive" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Drive" value="1" /><span></span>
+			<input type="radio" name="attr_Drive" value="2" /><span></span>
+			<input type="radio" name="attr_Drive" value="3" /><span></span>
+			<input type="radio" name="attr_Drive" value="4" /><span></span>
+			<input type="radio" name="attr_Drive" value="5" /><span></span>
+			<input type="radio" name="attr_Drive" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Wits}+@{Drive})d10>7 Wits and Drive' name='roll_WitsDrive' /></button>
+        </div>
+		
+		<div class="sheet-row">
+            <input type="radio" name="attr_Pilot" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Pilot" value="1" /><span></span>
+			<input type="radio" name="attr_Pilot" value="2" /><span></span>
+			<input type="radio" name="attr_Pilot" value="3" /><span></span>
+			<input type="radio" name="attr_Pilot" value="4" /><span></span>
+			<input type="radio" name="attr_Pilot" value="5" /><span></span>
+			<input type="radio" name="attr_Pilot" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Wits}+@{Pilot})d10>7 Wits and Pilot' name='roll_WitsPilot' /></button>
+        </div>
+		
+    </div>
+    <div class="sheet-col" style="width:5px">
+    </div>
+    <div class="sheet-col" style="width:105px; line-height:28px">
+        <h4 style="line-height:28px">APPEARANCE</h4>
+        <h4 style="line-height:28px">Disguise</h4>
+        <h4 style="line-height:28px">Intimidation</h4>
+        <h4 style="line-height:28px"3>Style</h4>
+        <h4 style="line-height:28px">MANIPULATION</h4>
+        <h4 style="line-height:28px">AnimalHandling</h4>
+        <h4 style="line-height:28px">Interrogation</h4>
+        <h4 style="line-height:28px">Savvy</h4>
+        <h4 style="line-height:28px">Subterfuge</h4>
+        <h4 style="line-height:28px">CHARISMA</h4>
+		<h4 style="line-height:28px">Command</h4>
+		<h4 style="line-height:28px">Etiquette</h4>
+		<h4 style="line-height:28px">Perform</h4>
+		<h4 style="line-height:28px">Rapport</h4>
+    </div>
+	
+    <div class="sheet-col" style="width:160px; line-height:28px">
+	<BR style="line-height:28px">
+        <div class="sheet-row">
+            <input type="radio" name="attr_Disguise" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Disguise" value="1" /><span></span>
+			<input type="radio" name="attr_Disguise" value="2" /><span></span>
+			<input type="radio" name="attr_Disguise" value="3" /><span></span>
+			<input type="radio" name="attr_Disguise" value="4" /><span></span>
+			<input type="radio" name="attr_Disguise" value="5" /><span></span>
+			<input type="radio" name="attr_Disguise" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Appearance}+@{Disguise})d10>7 Appearance and Disguise' name='roll_AppearanceDisguise' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Intimidation" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Intimidation" value="1" /><span></span>
+			<input type="radio" name="attr_Intimidation" value="2" /><span></span>
+			<input type="radio" name="attr_Intimidation" value="3" /><span></span>
+			<input type="radio" name="attr_Intimidation" value="4" /><span></span>
+			<input type="radio" name="attr_Intimidation" value="5" /><span></span>
+			<input type="radio" name="attr_Intimidation" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Appearance}+@{Intimidation})d10>7 Appearance and Intimidation' name='roll_AppearanceIntimidation' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Style" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Style" value="1" /><span></span>
+			<input type="radio" name="attr_Style" value="2" /><span></span>
+			<input type="radio" name="attr_Style" value="3" /><span></span>
+			<input type="radio" name="attr_Style" value="4" /><span></span>
+			<input type="radio" name="attr_Style" value="5" /><span></span>
+			<input type="radio" name="attr_Style" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Appearance}+@{Style})d10>7 Appearance and Style' name='roll_AppearanceStyle' /></button>
+        </div>
+		
+		<BR style="line-height:28px">
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_AnimalHandling" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_AnimalHandling" value="1" /><span></span>
+			<input type="radio" name="attr_AnimalHandling" value="2" /><span></span>
+			<input type="radio" name="attr_AnimalHandling" value="3" /><span></span>
+			<input type="radio" name="attr_AnimalHandling" value="4" /><span></span>
+			<input type="radio" name="attr_AnimalHandling" value="5" /><span></span>
+			<input type="radio" name="attr_AnimalHandling" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Manipulation}+@{AnimalHandling})d10>7 Manipulation and Animal Handling' name='roll_ManipulationAnimalHandling' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Interrogation" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Interrogation" value="1" /><span></span>
+			<input type="radio" name="attr_Interrogation" value="2" /><span></span>
+			<input type="radio" name="attr_Interrogation" value="3" /><span></span>
+			<input type="radio" name="attr_Interrogation" value="4" /><span></span>
+			<input type="radio" name="attr_Interrogation" value="5" /><span></span>
+			<input type="radio" name="attr_Interrogation" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Manipulation}+@{Interrogation})d10>7 Manipulation and Interrogation' name='roll_ManipulationInterrogation' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Savvy" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Savvy" value="1" /><span></span>
+			<input type="radio" name="attr_Savvy" value="2" /><span></span>
+			<input type="radio" name="attr_Savvy" value="3" /><span></span>
+			<input type="radio" name="attr_Savvy" value="4" /><span></span>
+			<input type="radio" name="attr_Savvy" value="5" /><span></span>
+			<input type="radio" name="attr_Savvy" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Manipulation}+@{Savvy})d10>7 Manipulation and Savvy' name='roll_ManipulationSavvy' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Subterfuge" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Subterfuge" value="1" /><span></span>
+			<input type="radio" name="attr_Subterfuge" value="2" /><span></span>
+			<input type="radio" name="attr_Subterfuge" value="3" /><span></span>
+			<input type="radio" name="attr_Subterfuge" value="4" /><span></span>
+			<input type="radio" name="attr_Subterfuge" value="5" /><span></span>
+			<input type="radio" name="attr_Subterfuge" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Manipulation}+@{Subterfuge})d10>7 Manipulation and Subterfuge' name='roll_ManipulationSubterfuge' /></button>
+        </div>
+		
+		<BR style="line-height:28px">
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Command" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Command" value="1" /><span></span>
+			<input type="radio" name="attr_Command" value="2" /><span></span>
+			<input type="radio" name="attr_Command" value="3" /><span></span>
+			<input type="radio" name="attr_Command" value="4" /><span></span>
+			<input type="radio" name="attr_Command" value="5" /><span></span>
+			<input type="radio" name="attr_Command" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Charisma}+@{Command})d10>7 Charisma and Command' name='roll_CharismaCommand' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Etiquette" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Etiquette" value="1" /><span></span>
+			<input type="radio" name="attr_Etiquette" value="2" /><span></span>
+			<input type="radio" name="attr_Etiquette" value="3" /><span></span>
+			<input type="radio" name="attr_Etiquette" value="4" /><span></span>
+			<input type="radio" name="attr_Etiquette" value="5" /><span></span>
+			<input type="radio" name="attr_Etiquette" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Charisma}+@{Etiquette})d10>7 Charisma and Etiquette' name='roll_CharismaEtiquette' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Perform" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Perform" value="1" /><span></span>
+			<input type="radio" name="attr_Perform" value="2" /><span></span>
+			<input type="radio" name="attr_Perform" value="3" /><span></span>
+			<input type="radio" name="attr_Perform" value="4" /><span></span>
+			<input type="radio" name="attr_Perform" value="5" /><span></span>
+			<input type="radio" name="attr_Perform" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Charisma}+@{Perform})d10>7 Charisma and Perform' name='roll_CharismaPerform' /></button>
+        </div>
+		
+		<div class="sheet-row">
+            <input type="radio" name="attr_Rapport" value="0" class=" zero" checked/><span></span>
+			<input type="radio" name="attr_Rapport" value="1" /><span></span>
+			<input type="radio" name="attr_Rapport" value="2" /><span></span>
+			<input type="radio" name="attr_Rapport" value="3" /><span></span>
+			<input type="radio" name="attr_Rapport" value="4" /><span></span>
+			<input type="radio" name="attr_Rapport" value="5" /><span></span>
+			<input type="radio" name="attr_Rapport" value="6" /><span></span>
+			<button type='roll' value='/roll (@{Charisma}+@{Rapport})d10>7 Charisma and Rapport' name='roll_CharismaRapport' /></button>
+        </div>
+		
+		
+		
+		
+		
+		
+    </div>
+</div>
+
+<hr/>
+
+<h1 style="text-align: center; width:750px">Advantages</h1>
+
+<div class="sheet-3colrow">
+    <div class="sheet-col" style="width:265px">
+        <h3 style="text-align: center">Backgrounds</h3>
+    </div>
+    <div class="sheet-col"  style="width:175px">
+        <h3 style="text-align: center">Enhancements</h3>
+    </div>
+    <div class="sheet-col" style="width:265px">
+        <h3 style="text-align: center">Pools</h3>
+    </div>
+</div>
+
+<div class="sheet-colrow">
+    
+    <div class="sheet-col" style="width:15px">
+    </div>
+    <div class="sheet-col" style="width:105px">
+        <input type="text" name="attr_Back1name" style="width:105px"/>
+        <input type="text" name="attr_Back2name" style="width:105px"/>
+        <input type="text" name="attr_Back3name" style="width:105px"/>
+        <input type="text" name="attr_Back4name" style="width:105px"/>
+        <input type="text" name="attr_Back5name" style="width:105px"/>
+        <input type="text" name="attr_Back6name" style="width:105px"/>
+		<input type="text" name="attr_Back7name" style="width:105px"/>
+		<input type="text" name="attr_Back8name" style="width:105px"/>
+		<input type="text" name="attr_Back9name" style="width:105px"/>
+		<input type="text" name="attr_Back10name" style="width:105px"/>
+		<input type="text" name="attr_Back11name" style="width:105px"/>
+		<input type="text" name="attr_Back12name" style="width:105px"/>
+		<input type="text" name="attr_Back13name" style="width:105px"/>
+    </div>
+	
+    <div class="sheet-col" style="width:160px; line-height:28px" align="right">
+        <input type="radio" name="attr_Back1" value="0" class=" zero" checked/>
+		<span></span> <input type="radio" name="attr_Back1" value="1" />
+		<span></span> <input type="radio" name="attr_Back1" value="2" />
+		<span></span> <input type="radio" name="attr_Back1" value="3" />
+		<span></span> <input type="radio" name="attr_Back1" value="4" />
+		<span></span> <input type="radio" name="attr_Back1" value="5" />
+		<span></span> <button type='roll' value='/roll @{Back1}d10>7 @{Back1name}' name='roll_Background1' /></button>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Back2" value="0" class=" zero" checked/>
+			<span></span> <input type="radio" name="attr_Back2" value="1" />
+			<span></span> <input type="radio" name="attr_Back2" value="2" />
+			<span></span> <input type="radio" name="attr_Back2" value="3" />
+			<span></span> <input type="radio" name="attr_Back2" value="4" />
+			<span></span> <input type="radio" name="attr_Back2" value="5" />
+			<span></span> <button type='roll' value='/roll @{Back2}d10>7 @{Back2name}' name='roll_Background2' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Back3" value="0" class=" zero" checked/>
+			<span></span> <input type="radio" name="attr_Back3" value="1" />
+			<span></span> <input type="radio" name="attr_Back3" value="2" />
+			<span></span> <input type="radio" name="attr_Back3" value="3" />
+			<span></span> <input type="radio" name="attr_Back3" value="4" />
+			<span></span> <input type="radio" name="attr_Back3" value="5" />
+			<span></span> <button type='roll' value='/roll @{Back3}d10>7 @{Back3name}' name='roll_Background3' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Back4" value="0" class=" zero" checked/>
+			<span></span> <input type="radio" name="attr_Back4" value="1" />
+			<span></span> <input type="radio" name="attr_Back4" value="2" />
+			<span></span> <input type="radio" name="attr_Back4" value="3" />
+			<span></span> <input type="radio" name="attr_Back4" value="4" />
+			<span></span> <input type="radio" name="attr_Back4" value="5" />
+			<span></span> <button type='roll' value='/roll @{Back4}d10>7 @{Back4name}' name='roll_Background4' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Back5" value="0" class=" zero" checked/>
+			<span></span> <input type="radio" name="attr_Back5" value="1" />
+			<span></span> <input type="radio" name="attr_Back5" value="2" />
+			<span></span> <input type="radio" name="attr_Back5" value="3" />
+			<span></span> <input type="radio" name="attr_Back5" value="4" />
+			<span></span> <input type="radio" name="attr_Back5" value="5" />
+			<span></span> <button type='roll' value='/roll @{Back5}d10>7 @{Back5name}' name='roll_Background5' /></button>
+        </div>
+		
+        <div class="sheet-row">
+            <input type="radio" name="attr_Back6" value="0" class=" zero" checked/>
+			<span></span> <input type="radio" name="attr_Back6" value="1" />
+			<span></span> <input type="radio" name="attr_Back6" value="2" />
+			<span></span> <input type="radio" name="attr_Back6" value="3" />
+			<span></span> <input type="radio" name="attr_Back6" value="4" />
+			<span></span> <input type="radio" name="attr_Back6" value="5" />
+			<span></span> <button type='roll' value='/roll @{Back6}d10>7 @{Back6name}' name='roll_Background6' /></button>
+        </div>
+		
+		<div class="sheet-row">
+            <input type="radio" name="attr_Back7" value="0" class=" zero" checked/>
+			<span></span> <input type="radio" name="attr_Back7" value="1" />
+			<span></span> <input type="radio" name="attr_Back7" value="2" />
+			<span></span> <input type="radio" name="attr_Back7" value="3" />
+			<span></span> <input type="radio" name="attr_Back7" value="4" />
+			<span></span> <input type="radio" name="attr_Back7" value="5" />
+			<span></span> <button type='roll' value='/roll @{Back7}d10>7 @{Back7name}' name='roll_Background7' /></button>
+        </div>
+		
+		<div class="sheet-row">
+            <input type="radio" name="attr_Back8" value="0" class=" zero" checked/>
+			<span></span> <input type="radio" name="attr_Back8" value="1" />
+			<span></span> <input type="radio" name="attr_Back8" value="2" />
+			<span></span> <input type="radio" name="attr_Back8" value="3" />
+			<span></span> <input type="radio" name="attr_Back8" value="4" />
+			<span></span> <input type="radio" name="attr_Back8" value="5" />
+			<span></span> <button type='roll' value='/roll @{Back8}d10>7 @{Back8name}' name='roll_Background8' /></button>
+        </div>
+		
+		<div class="sheet-row">
+            <input type="radio" name="attr_Back9" value="0" class=" zero" checked/>
+			<span></span> <input type="radio" name="attr_Back9" value="1" />
+			<span></span> <input type="radio" name="attr_Back9" value="2" />
+			<span></span> <input type="radio" name="attr_Back9" value="3" />
+			<span></span> <input type="radio" name="attr_Back9" value="4" />
+			<span></span> <input type="radio" name="attr_Back9" value="5" />
+			<span></span> <button type='roll' value='/roll @{Back9}d10>7 @{Back9name}' name='roll_Background9' /></button>
+        </div>
+		
+		<div class="sheet-row">
+            <input type="radio" name="attr_Back10" value="0" class=" zero" checked/>
+			<span></span> <input type="radio" name="attr_Back10" value="1" />
+			<span></span> <input type="radio" name="attr_Back10" value="2" />
+			<span></span> <input type="radio" name="attr_Back10" value="3" />
+			<span></span> <input type="radio" name="attr_Back10" value="4" />
+			<span></span> <input type="radio" name="attr_Back10" value="5" />
+			<span></span> <button type='roll' value='/roll @{Back10}d10>7 @{Back10name}' name='roll_Background10' /></button>
+        </div>
+		
+		<div class="sheet-row">
+            <input type="radio" name="attr_Back11 value="0" class=" zero" checked/>
+			<span></span> <input type="radio" name="attr_Back11" value="1" />
+			<span></span> <input type="radio" name="attr_Back11" value="2" />
+			<span></span> <input type="radio" name="attr_Back11" value="3" />
+			<span></span> <input type="radio" name="attr_Back11" value="4" />
+			<span></span> <input type="radio" name="attr_Back11" value="5" />
+			<span></span> <button type='roll' value='/roll @{Back11}d10>7 @{Back11name}' name='roll_Background11' /></button>
+        </div>
+		
+		<div class="sheet-row">
+            <input type="radio" name="attr_Back12" value="0" class=" zero" checked/>
+			<span></span> <input type="radio" name="attr_Back12" value="1" />
+			<span></span> <input type="radio" name="attr_Back12" value="2" />
+			<span></span> <input type="radio" name="attr_Back12" value="3" />
+			<span></span> <input type="radio" name="attr_Back12" value="4" />
+			<span></span> <input type="radio" name="attr_Back12" value="5" />
+			<span></span> <button type='roll' value='/roll @{Back12}d10>7 @{Back12name}' name='roll_Background12' /></button>
+        </div>
+		
+		<div class="sheet-row">
+            <input type="radio" name="attr_Back13" value="0" class=" zero" checked/>
+			<span></span> <input type="radio" name="attr_Back13" value="1" />
+			<span></span> <input type="radio" name="attr_Back13" value="2" />
+			<span></span> <input type="radio" name="attr_Back13" value="3" />
+			<span></span> <input type="radio" name="attr_Back13" value="4" />
+			<span></span> <input type="radio" name="attr_Back13" value="5" />
+			<span></span> <button type='roll' value='/roll @{Back13}d10>7 @{Back13name}' name='roll_Background13' /></button>
+        </div>
+    </div>
+	
+	<div class="sheet-col" style="width:15px">
+    </div>
+    <div class="sheet-col" style="width:175px"; style="align:center">
+        <input type="text" name="attr_Enhancement1" style="width:150px"/>
+        <input type="text" name="attr_Enhancement2" style="width:150px"/>
+        <input type="text" name="attr_Enhancement3" style="width:150px"/>
+        <input type="text" name="attr_Enhancement4" style="width:150px"/>
+        <input type="text" name="attr_Enhancement5" style="width:150px"/>
+        <input type="text" name="attr_Enhancement6" style="width:150px"/>
+		<input type="text" name="attr_Enhancement7" style="width:150px"/>
+		<input type="text" name="attr_Enhancement8" style="width:150px"/>
+		<input type="text" name="attr_Enhancement9" style="width:150px"/>
+		<input type="text" name="attr_Enhancement10" style="width:150px"/>
+		<input type="text" name="attr_Enhancement11" style="width:150px"/>
+		<input type="text" name="attr_Enhancement12" style="width:150px"/>
+		<input type="text" name="attr_Enhancement13" style="width:150px"/>
+    </div>
+	
+    <div class="sheet-col" style="width:15px">
+    </div>
+    <div class="sheet-col" style="width:275px; line-height:17px"; style="align:center">
+        <br>
+        
+		<h3 align="center">Willpower</h3>
+    <div align="left" style="margin:0px 0px 0px 46px">
+	<input type="radio" name="attr_Willpower" value="1" />
+	<span></span> <input type="radio" name="attr_Willpower" value="2" />
+	<span></span> <input type="radio" name="attr_Willpower" value="3" />
+	<span></span> <input type="radio" name="attr_Willpower" value="4" />
+	<span></span> <input type="radio" name="attr_Willpower" value="5" />
+	<span></span> <input type="radio" name="attr_Willpower" value="6" />
+	<span></span> <input type="radio" name="attr_Willpower" value="7" />
+	<span></span> <input type="radio" name="attr_Willpower" value="8" />
+	<span></span> <input type="radio" name="attr_Willpower" value="9" />
+	<span></span> <input type="radio" name="attr_Willpower" value="10" />
+	<span></span>
+        <button type='roll' name='roll_Willpowerroll' value='/roll @{Willpower}d10>7 Willpower'></button>
+    </div>
+	
+    <div align="left" style="margin:0px 0px 0px 28px">
+        <input type="radio" name="attr_Willpower_Used" value="0" class=" zero" checked/>
+		<span></span> <input type="radio" name="attr_Willpower_Used" value="1" class=" used"/>
+		<span></span> <input type="radio" name="attr_Willpower_Used" value="2" class=" used"/>
+		<span></span> <input type="radio" name="attr_Willpower_Used" value="3" class=" used"/>
+		<span></span> <input type="radio" name="attr_Willpower_Used" value="4" class=" used"/>
+		<span></span> <input type="radio" name="attr_Willpower_Used" value="5" class=" used"/>
+		<span></span> <input type="radio" name="attr_Willpower_Used" value="6" class=" used"/>
+		<span></span> <input type="radio" name="attr_Willpower_Used" value="7" class=" used"/>
+		<span></span> <input type="radio" name="attr_Willpower_Used" value="8" class=" used"/>
+		<span></span> <input type="radio" name="attr_Willpower_Used" value="9" class=" used"/>
+		<span></span> <input type="radio" name="attr_Willpower_Used" value="10" class=" used"/>
+		<span></span>
+    </div>
+	
+	<br>
+    <h3 align="center">Inspiration</h3>
+    <div align="left" style="margin:0px 0px 0px 46px">
+	<input type="radio" name="attr_TotalInspiration" value="1" />
+	<span></span> <input type="radio" name="attr_TotalInspiration" value="2" />
+	<span></span> <input type="radio" name="attr_TotalInspiration" value="3" />
+	<span></span> <input type="radio" name="attr_TotalInspiration" value="4" />
+	<span></span> <input type="radio" name="attr_TotalInspiration" value="5" />
+	<span></span> <input type="radio" name="attr_TotalInspiration" value="6" />
+	<span></span> <input type="radio" name="attr_TotalInspiration" value="7" />
+	<span></span> <input type="radio" name="attr_TotalInspiration" value="8" />
+	<span></span> <input type="radio" name="attr_TotalInspiration" value="9" />
+	<span></span> <input type="radio" name="attr_TotalInspiration" value="10" />
+	<span></span>        
+    </div>
+	
+		
+    <div align="left" style="margin:0px 0px 0px 28px">
+        <input type="radio" name="attr_Inspiration_Used" value="0" class=" zero" checked/>
+		<span></span> <input type="radio" name="attr_Inspiration_Used" value="1" class=" used"/>
+		<span></span> <input type="radio" name="attr_Inspiration_Used" value="2" class=" used"/>
+		<span></span> <input type="radio" name="attr_Inspiration_Used" value="3" class=" used"/>
+		<span></span> <input type="radio" name="attr_Inspiration_Used" value="4" class=" used"/>
+		<span></span> <input type="radio" name="attr_Inspiration_Used" value="5" class=" used"/>
+		<span></span> <input type="radio" name="attr_Inspiration_Used" value="6" class=" used"/>
+		<span></span> <input type="radio" name="attr_Inspiration_Used" value="7" class=" used"/>
+		<span></span> <input type="radio" name="attr_Inspiration_Used" value="8" class=" used"/>
+		<span></span> <input type="radio" name="attr_Inspiration_Used" value="9" class=" used"/>
+		<span></span> <input type="radio" name="attr_Inspiration_Used" value="10" class=" used"/>
+		<span></span>
+    </div>
+	
+	<br>
+    <h3 align="center">Intuitive Facet</h3>
+    <div align="left" style="margin:0px 0px 0px 46px">
+	<input type="radio" name="attr_IntuitiveFacet" value="0" class=" zero" checked/><span></span>
+	<input type="radio" name="attr_IntuitiveFacet" value="1" />
+	<span></span> <input type="radio" name="attr_IntuitiveFacet" value="2" />
+	<span></span> <input type="radio" name="attr_IntuitiveFacet" value="3" />
+	<span></span> <input type="radio" name="attr_IntuitiveFacet" value="4" />
+	<span></span> <input type="radio" name="attr_IntuitiveFacet" value="5" />
+	<span></span>        
+    </div>
+	
+	<br>
+    <h3 align="center">Reflective Facet</h3>
+    <div align="left" style="margin:0px 0px 0px 46px">
+	<input type="radio" name="attr_ReflectiveFacet" value="0" class=" zero" checked/><span></span>
+	<input type="radio" name="attr_ReflectiveFacet" value="1" />
+	<span></span> <input type="radio" name="attr_ReflectiveFacet" value="2" />
+	<span></span> <input type="radio" name="attr_ReflectiveFacet" value="3" />
+	<span></span> <input type="radio" name="attr_ReflectiveFacet" value="4" />
+	<span></span> <input type="radio" name="attr_ReflectiveFacet" value="5" />
+	<span></span>        
+    </div>
+	
+	<br>
+    <h3 align="center">Destructive Facet</h3>
+    <div align="left" style="margin:0px 0px 0px 46px">
+	<input type="radio" name="attr_DestructiveFacet" value="0" class=" zero" checked/><span></span>
+	<input type="radio" name="attr_DestructiveFacet" value="1" />
+	<span></span> <input type="radio" name="attr_DestructiveFacet" value="2" />
+	<span></span> <input type="radio" name="attr_DestructiveFacet" value="3" />
+	<span></span> <input type="radio" name="attr_DestructiveFacet" value="4" />
+	<span></span> <input type="radio" name="attr_DestructiveFacet" value="5" />
+	<span></span>        
+    </div>
+		
+		
+    </div>
+</div>
+<hr>
+
+<h1 style="text-align: center; width:750px">Combat</h1>
+
+<div class="sheet-3colrow">
+    <div class="sheet-col" style="width:250px">
+        <h3 style="text-align: center">Damage</h3>
+    </div>
+    <div class="sheet-col" style="width:230px">
+        <h3 style="text-align: center">Armor</h3>
+    </div>
+    <div class="sheet-col" style="width:270px">
+        <h3 style="text-align: center">Health</h3>
+    </div>
+</div>
+
+<div class="sheet-colrow">
+	 
+	 <div class="sheet-col" align="center" style="width:250px">
+		 <div align="left" style="margin:0px 0px 0px 40px"><b >Weapon &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bonus Dice</b ></div>
+        
+		
+            <div class="UnarmedWeapon">
+                <select name="attr_UnarmedWeapon" style="width:150px">
+				<option value="0" selected>Unarmed</option>
+				<option value="2">Clinch</option>
+				<option value="0">Disarm</option>
+				<option value="4">Kick</option>
+				<option value="2">Strike</option>
+				<option value="1">Sweep</option>
+				<option value="3">Tackle</option>
+				<option value="1">Throw</option>
+				</select>
+				
+				<input type="number" name="attr_DamageBonus" style="width:50px" value="0" />
+								
+                <button type='roll' name='roll_UnarmedDamageRoll' value='/roll (@{UnarmedWeapon}+@{Strength}+@{DamageBonus})d10>7 Damage'></button>
+            </div>
+		
+		
+		
+            <div class="MeleeWeapon">
+                <select name="attr_MeleeWeapon" style="width:150px">
+				<option value="0" selected>Melee</option>
+				<option value="4">Ax</option>
+				<option value="5">Chain</option>
+				<option value="4">Club</option>
+				<option value="2">Knife</option>
+				<option value="6">Staff</option>
+				<option value="4">Spear</option>
+				<option value="5">Sword</option>
+				<option value="4">Sword Cane</option>
+				<option value="2">Whip</option>
+				<option value="5">Claymore</option>
+				</select>
+				
+				<input type="number" name="attr_DamageBonus" style="width:50px" value="0" />
+								
+                <button type='roll' name='roll_MeleeDamageRoll' value='/roll (@{MeleeWeapon}+@{Strength}+@{DamageBonus})d10>7 Damage'></button>
+            </div>
+			
+		
+            <div class="RangedWeapon">
+                <select name="attr_RangedWeapon" style="width:150px">
+				<option value="0" selected>Ranged</option>
+				<option value="3">Light Revolver</option>
+				<option value="4">Heavy Revolver</option>
+				<option value="3">Light Automatic</option>
+				<option value="4">Heavy Automatic</option>
+				<option value="7">Rifle</option>
+				<option value="5">Submachinegun</option>
+				<option value="6">Light Machine Gun</option>
+				<option value="6">Shotgun</option>
+				<option value="2">Bow</option>
+				<option value="7">Laser Rifle</option>
+				<option value="6">Laser Pistol</option>
+				</select>
+				
+				<input type="number" name="attr_DamageBonus" style="width:50px" value="0" />
+								
+                <button type='roll' name='roll_RangedDamageRoll' value='/roll (@{RangedWeapon}+@{DamageBonus})d10>7 Damage'></button>
+            </div>
+			
+			
+            <div class="HeavyWeapon">
+                <select name="attr_HeavyWeapon" style="width:150px">
+				<option value="0" selected>Heavy</option>
+				<option value="6">Heavy Machine Gun</option>
+				<option value="12">75mm Gun</option>
+				<option value="15">Artillery</option>
+				<option value="8">Flamethrower</option>
+				<option value="8">Mortar</option>
+				</select>
+				
+				<input type="number" name="attr_DamageBonus" style="width:50px" value="0" />
+								
+                <button type='roll' name='roll_HeavyDamageRoll' value='/roll (@{HeavyWeapon}+@{DamageBonus})d10>7 Damage'></button>
+            </div>
+			
+			
+            <div class="GrenadeWeapon">
+                <select name="attr_GrenadeWeapon" style="width:150px">
+				<option value="0" selected>Grenade</option>
+				<option value="7">Fragmentation</option>
+				<option value="8">Shaped Charge</option>
+				<option value="3">Tear Gas</option>
+				<option value="5">Concussive</option>
+				<option value="3">Flash</option>
+				<option value="7">White Phosphorous</option>
+				</select>
+				
+				<input type="number" name="attr_DamageBonus" style="width:50px" value="0" />
+								
+                <button type='roll' name='roll_GrenadeDamageRoll' value='/roll (@{GrenadeWeapon}+@{DamageBonus})d10>7 Damage'></button>
+            </div>
+			
+			
+            <div class="GeoffWeapon">
+                <select name="attr_GeoffWeapon" style="width:150px">
+				<option value="0" selected>Geoff</option>
+				</select>
+				
+				<input type="number" name="attr_DamageBonus" style="width:50px" value="0" />
+								
+                <button type='roll' name='roll_GeoffDamageRoll' value='/roll (@{Strength}+@{DamageBonus})d10>7 Damage'></button>
+            </div>
+	</div>
+
+	<div class="sheet-col" style="width:230px">
+		 <div align="right" style="margin:0px 0px 0px 40px"><b >Bashing &nbsp;&nbsp; Lethal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b ></div>
+		 <div class="sheet2colrow"></div>
+    	<div class="sheet-col" style="width:100px">
+			<h4 style="text-align: left; line-height:28px">Stamina:</h4> 
+			<h4 style="text-align: left ;line-height:28px">Armor:</h4> 
+			<h4 style="text-align: left; line-height:28px">Special Armor:</h4> 
+			<h4 style="text-align: left; line-height:28px">Total Armor:</h4> 										 										 										   
+			<h4 style="text-align: left; line-height:28px">Rolls:</h4> 
+			</div>
+			
+			<div class="sheet-col" style="width:90px" align="right">
+				<input type="number" name="attr_NoArmorBashing" value="@{Stamina}" style="width:40px" disabled="true" />
+								   					   <input type="number" name="attr_NoArmorLethal" value="floor(@{Stamina}/2)" style="width:40px" disabled="true" /><BR>	
+				<input type="number" name="attr_ArmorBashing" value="0" style="width:40px" />
+								   					 <input type="number" name="attr_ArmorLethal" value="0" style="width:40px" /><BR>
+				<input type="number" name="attr_SpecialArmorBashing" value="0" style="width:40px" />
+								   					 <input type="number" name="attr_SpecialArmorLethal" value="0" style="width:40px" /><BR>
+				<input type="number" name="attr_TotalArmorBashing" value="@{NoArmorBashing}+@{ArmorBashing}+@{SpecialArmorBashing}" style="width:40px" disabled="true" />
+								   					 	   <input type="number" name="attr_TotalArmorLethal" value="[[@{NoArmorLethal}+@{ArmorLethal}+@{SpecialArmorLethal}]]" style="width:40px" disabled="true"/><BR>
+				<button type='roll' name='roll_ArmorBashingRoll' value='/roll (@{TotalArmorBashing})d10>7 Bashing Armor'></button>&nbsp;&nbsp;
+								   					   <button type='roll' name='roll_ArmorLethalRoll' value='/roll (@{TotalArmorLethal})d10>7 Lethal Armor'></button>
+			</div>
+													   								   							 							 		   									   								   
+	</div>
+	
+    <div class="sheet-col" style="width:270px">
+		<div class="sheet2colrow"></div>
+    	<div class="sheet-col" style="width:70px; margin-left:40px">
+        <h4 style="line-height:36px">Bruised</h4>
+        <h4 style="line-height:36px">Hurt</h4>
+        <h4 style="line-height:36px">Injured</h4>
+        <h4 style="line-height:36px">Wounded</h4>
+        <h4 style="line-height:36px">Maimed</h4>
+        <h4 style="line-height:36px">Crippled</h4>
+        <h4 style="line-height:36px">Incapacitated</h4>
+		
+    </div>
+    <div class="sheet-col" style="width:110px" align="right">
+	
+        <div class="sheet-row">
+            <select name="attr_Bruised"> <option value="0"></option> 
+			<option value="0">/</option>
+			<option value="0">X</option>
+			</select>
+        </div>
+		
+        <div class="sheet-row">
+            <h4>-1&nbsp;&nbsp;&nbsp;&nbsp;
+			<select name="attr_Hurt"> <option value="0"></option>
+			<option value="-1">/</option>
+			<option value="-1">X</option>
+			</select>
+        </div>
+		
+        <div class="sheet-row">
+            <h4>-1&nbsp;&nbsp;&nbsp;&nbsp;
+			<select name="attr_Injured"> <option value="0"></option>
+			<option value="0">/</option>
+			<option value="0">X</option>
+			</select>
+        </div>
+		
+        <div class="sheet-row">
+            <h4>-2&nbsp;&nbsp;&nbsp;&nbsp;
+			<select name="attr_Wounded"> <option value="0"></option>
+			<option value="-1">/</option>
+			<option value="-1">X</option>
+			</select>
+        </div>
+		
+        <div class="sheet-row">
+            <h4>-3&nbsp;&nbsp;&nbsp;&nbsp;
+			<select name="attr_Maimed"> <option value="0"></option>
+			<option value="-1">/</option>
+			<option value="-1">X</option>
+			</select>
+        </div>
+		
+        <div class="sheet-row">
+            <h4>-4&nbsp;&nbsp;&nbsp;&nbsp;
+			<select name="attr_Crippled"> <option value="0"></option>
+			<option value="-1">/</option>
+			<option value="-1">X</option>
+			</select>
+        </div>
+		
+        <div class="sheet-row">
+            <select name="attr_Incapacitated"> <option value="0"></option>
+			<option value="0">/</option>
+			<option value="0">X</option> 
+			</select>
+        </div>
+		
+		
+	
+</div>
+</div>
+
+<hr>
+
+
+    
+
+<h1 style="margin-bottom: 10px; text-align: center; width:750px">Custom Rolls</h1>
+
+<BR>
+
+
+    
+	
+    
+        <div align="left" style="margin:0px 0px 0px 40px"><b >Attribute &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ability &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bonus &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Description</b ></div>
+        <div align="left">
+		
+            <input type="checkbox" name="attr_ca1Spec" class="DP1Spec"/><span></span>
+            <div class="DP1">
+                <select name="attr_DPAtt1" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi1" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice1" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP1name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP1roll' value='/roll (@{DPAtt1}+@{DPAbi1}+@{BonusDice1})d10>7 @{DP1Name}' ></button>
+            </div>
+            <div class="DP1wSpec">
+                <select name="attr_DPAtt1" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi1" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice1" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP1name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP1roll' value='/r (@{DPAtt1}+@{DPAbi1}+@{BonusDice1})d10>7! @{DP1Name}' ></button>
+            </div><br>
+            
+			<input type="checkbox" name="attr_DP2Spec" class="DP2Spec"/><span></span>
+            <div class="DP2">
+                <select name="attr_DPAtt2" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi2" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice2" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP2name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP2roll' value='/roll (@{DPAtt2}+@{DPAbi2}+@{BonusDice2})d10>7 @{DP2Name}' ></button>
+            </div>
+			
+            <div class="DP2wSpec">
+                <select name="attr_DPAtt2" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi2" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice2" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP2name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP2roll' value='/r (@{DPAtt2}+@{DPAbi2}+@{BonusDice2})d10>7! @{DP2Name}' ></button>
+            </div><br>
+			
+			<input type="checkbox" name="attr_DP3Spec" class="DP3Spec"/><span></span>
+            <div class="DP3">
+                <select name="attr_DPAtt3" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi3" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice3" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP3name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP3roll' value='/roll (@{DPAtt3}+@{DPAbi3}+@{BonusDice3})d10>7 @{DP3Name}' ></button>
+            </div>
+            <div class="DP3wSpec">
+                <select name="attr_DPAtt3" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi3" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice3" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP3name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP3roll' value='/r (@{DPAtt3}+@{DPAbi3}+@{BonusDice3})d10>7! @{DP3Name}' ></button>
+            </div><br>
+			
+			<input type="checkbox" name="attr_DP4Spec" class="DP4Spec"/><span></span>
+            <div class="DP4">
+                <select name="attr_DPAtt4" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi4" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice4" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP4name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP4roll' value='/roll (@{DPAtt4}+@{DPAbi4}+@{BonusDice4})d10>7 @{DP4Name}' ></button>
+            </div>
+            <div class="DP4wSpec">
+                <select name="attr_DPAtt4" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi4" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice4" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP4name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP4roll' value='/r (@{DPAtt4}+@{DPAbi4}+@{BonusDice4})d10>7! @{DP4Name}' ></button>
+            </div><br>
+			
+			<input type="checkbox" name="attr_DP5Spec" class="DP5Spec"/><span></span>
+            <div class="DP5">
+                <select name="attr_DPAtt5" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi5" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice5" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP5name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP5roll' value='/roll (@{DPAtt5}+@{DPAbi5}+@{BonusDice5})d10>7 @{DP5Name}' ></button>
+            </div>
+            <div class="DP5wSpec">
+                <select name="attr_DPAtt5" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi5" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice5" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP5name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP5roll' value='/r (@{DPAtt5}+@{DPAbi5}+@{BonusDice5})d10>7! @{DP5Name}' ></button>
+            </div><br>
+			
+			
+			<input type="checkbox" name="attr_DP6Spec" class="DP6Spec"/><span></span>
+            <div class="DP6">
+                <select name="attr_DPAtt6" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi6" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice6" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP6name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP6roll' value='/roll (@{DPAtt6}+@{DPAbi6}+@{BonusDice6})d10>7 @{DP6Name}' ></button>
+            </div>
+            <div class="DP6wSpec">
+                <select name="attr_DPAtt6" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi6" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice6" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP6name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP6roll' value='/r (@{DPAtt6}+@{DPAbi6}+@{BonusDice6})d10>7! @{DP6Name}' ></button>
+            </div><br>
+			
+			<input type="checkbox" name="attr_DP7Spec" class="DP7Spec"/><span></span>
+            <div class="DP7">
+                <select name="attr_DPAtt7" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi7" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice7" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP7name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP7roll' value='/roll (@{DPAtt7}+@{DPAbi7}+@{BonusDice7})d10>7 @{DP7Name}' ></button>
+            </div>
+            <div class="DP7wSpec">
+                <select name="attr_DPAtt7" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi7" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice7" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP7name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP7roll' value='/r (@{DPAtt7}+@{DPAbi7}+@{BonusDice7})d10>7! @{DP7Name}' ></button>
+            </div><br>
+			
+			<input type="checkbox" name="attr_DP8Spec" class="DP8Spec"/><span></span>
+            <div class="DP8">
+                <select name="attr_DPAtt8" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi8" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice8" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP8name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP8roll' value='/roll (@{DPAtt8}+@{DPAbi8}+@{BonusDice8})d10>7 @{DP8Name}' ></button>
+            </div>
+            <div class="DP8wSpec">
+                <select name="attr_DPAtt1" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi8" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice8" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP8name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP8roll' value='/r (@{DPAtt8}+@{DPAbi8}+@{BonusDice8})d10>7! @{DP8Name}' ></button>
+            </div><br>
+			
+			<input type="checkbox" name="attr_DP9Spec" class="DP9Spec"/><span></span>
+            <div class="DP9">
+                <select name="attr_DPAtt9" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi9" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice9" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP9name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP9roll' value='/roll (@{DPAtt9}+@{DPAbi9}+@{BonusDice9})d10>7 @{DP9Name}' ></button>
+            </div>
+            <div class="DP9wSpec">
+                <select name="attr_DPAtt9" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi9" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice9" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP9name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP9roll' value='/r (@{DPAtt9}+@{DPAbi9}+@{BonusDice9})d10>7! @{DP9Name}' ></button>
+            </div><br>
+			
+			<input type="checkbox" name="attr_DP10Spec" class="DP10Spec"/><span></span>
+            <div class="DP10">
+                <select name="attr_DPAtt10" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi10" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice10" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP10name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP10roll' value='/roll (@{DPAtt10}+@{DPAbi10}+@{BonusDice10})d10>7 @{DP10Name}' ></button>
+            </div>
+            <div class="DP10wSpec">
+                <select name="attr_DPAtt10" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi10" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice10" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP10name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP10roll' value='/r (@{DPAtt10}+@{DPAbi10}+@{BonusDice10})d10>7! @{DP10Name}' ></button>
+            </div><br>
+			
+			<input type="checkbox" name="attr_DP11Spec" class="DP11Spec"/><span></span>
+            <div class="DP11">
+                <select name="attr_DPAtt11" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi11" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice11" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP11name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP11roll' value='/roll (@{DPAtt11}+@{DPAbi11}+@{BonusDice11})d10>7 @{DP11Name}' ></button>
+            </div>
+            <div class="DP11wSpec">
+                <select name="attr_DPAtt11" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi11" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice11" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP11name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP11roll' value='/r (@{DPAtt11}+@{DPAbi11}+@{BonusDice11})d10>7! @{DP11Name}' ></button>
+            </div><br>
+			
+			<input type="checkbox" name="attr_DP12Spec" class="DP12Spec"/><span></span>
+            <div class="DP12">
+                <select name="attr_DPAtt12" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi12" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice12" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP12name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP12roll' value='/roll (@{DPAtt12}+@{DPAbi12}+@{BonusDice12})d10>7 @{DP12Name}' ></button>
+            </div>
+            <div class="DP12wSpec">
+                <select name="attr_DPAtt12" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi12" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice12" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP12name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP12roll' value='/r (@{DPAtt12}+@{DPAbi12}+@{BonusDice12})d10>7! @{DP12Name}' ></button>
+            </div><br>
+			
+			<input type="checkbox" name="attr_DP13Spec" class="DP13Spec"/><span></span>
+            <div class="DP13">
+                <select name="attr_DPAtt13" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi13" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice13" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP13name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP13roll' value='/roll (@{DPAtt13}+@{DPAbi13}+@{BonusDice13})d10>7 @{DP13Name}' ></button>
+            </div>
+            <div class="DP13wSpec">
+                <select name="attr_DPAtt13" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi13" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice13" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP13name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP13roll' value='/r (@{DPAtt13}+@{DPAbi13}+@{BonusDice13})d10>7! @{DP13Name}' ></button>
+            </div><br>
+			
+			<input type="checkbox" name="attr_DP14Spec" class="DP14Spec"/><span></span>
+            <div class="DP14">
+                <select name="attr_DPAtt14" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi14" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice14" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP14name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP14roll' value='/roll (@{DPAtt14}+@{DPAbi14}+@{BonusDice14})d10>7 @{DP14Name}' ></button>
+            </div>
+            <div class="DP14wSpec">
+                <select name="attr_DPAtt14" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi14" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice14" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP14name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP14roll' value='/r (@{DPAtt14}+@{DPAbi14}+@{BonusDice14})d10>7! @{DP14Name}' ></button>
+            </div><br>
+			
+			<input type="checkbox" name="attr_DP15Spec" class="DP15Spec"/><span></span>
+            <div class="DP15">
+                <select name="attr_DPAtt15" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi15" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice15" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP15name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP15roll' value='/roll (@{DPAtt15}+@{DPAbi15}+@{BonusDice15})d10>7 @{DP15Name}' ></button>
+            </div>
+            <div class="DP15wSpec">
+                <select name="attr_DPAtt15" style="width:125px">
+				<option value="0" selected></option>
+				<option value="(@{Strength}+@{WoundPenalty})">Strength</option>
+				<option value="(@{Dexterity}+@{WoundPenalty}+@{ArmorPenalty})">Dexterity</option>
+				<option value="(@{Stamina}+@{WoundPenalty})">Stamina</option>
+				<option value="@{Perception}">Perception</option>
+				<option value="@{Intelligence}">Intelligence</option>
+				<option value="@{Wits}">Wits</option>
+				<option value="@{Appearance}">Appearance</option>
+				<option value="@{Manipulation}">Manipulation</option>
+				<option value="@{Charisma}">Charisma</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+                <select name="attr_DPAbi15" style="width:150px"> 
+				<option value="0" selected></option>
+				<option value="@{Academics}">Academics</option>
+				<option value="@{AnimalHandling}">Animal Handling</option>
+				<option value="@{Archery}">Archery</option>
+				<option value="@{Arts}">Arts</option>
+				<option value="@{Athletics}">Athletics</option>
+				<option value="@{Awareness}">Awareness</option>
+				<option value="@{Brawl}">Brawl</option>
+				<option value="@{Bureaucracy}">Bureaucracy</option>
+				<option value="@{Command}">Command</option>
+				<option value="@{Disguise}">Disguise</option>
+				<option value="@{Drive}">Drive</option>
+				<option value="@{Endurance}">Endurance</option>
+				<option value="@{Engineering}">Engineering</option> 
+				<option value="@{Etiquette}">Etiquette</option> 
+				<option value="@{Firearms}">Firearms</option>
+				<option value="@{Interrogation}">Interrogation</option> 
+				<option value="@{Intimidation}">Intimidation</option>
+				<option value="@{Investigation}">Investigation</option>
+				<option value="@{Legerdemain}">Legerdemain</option>
+				<option value="@{Linguistics}">Linguistics</option> 
+				<option value="@{MartialArts}">Martial Arts</option>
+				<option value="@{Medicine}">Medicine</option>
+				<option value="@{Melee}">Melee</option>
+				<option value="@{Might}">Might</option>
+				<option value="@{Navigation}">Navigation</option>
+				<option value="@{Perform}">Perform</option>
+				<option value="@{Pilot}">Pilot</option>
+				<option value="@{Rapport}">Rapport</option>
+				<option value="@{Resistance}">Resistance</option>
+				<option value="@{Savvy}">Savvy</option>
+				<option value="@{Science}">Science</option>
+				<option value="@{Stealth}">Stealth</option> 
+				<option value="@{Style}">Style</option> 
+				<option value="@{Subterfuge}">Subterfuge</option>
+				<option value="@{Survival}">Survival</option>
+				<option value="@{DestructiveFacet}">Destructive</option>
+				<option value="@{IntuitiveFacet}">Intuitive</option>
+				<option value="@{ReflectiveFacet}">Reflective</option>
+				</select>
+				
+				<input type="number" name="attr_BonusDice15" style="width:50px" value="0" />
+				
+				<input type="text" name="attr_DP15name" style="width:300px"/>
+				
+                <button type='roll' name='roll_DP15roll' value='/r (@{DPAtt15}+@{DPAbi15}+@{BonusDice15})d10>7! @{DP15Name}' ></button>
+            </div><br>
+            
+        </div>
+</div>
+</div>
+
+<hr>
+
+<h1 style="text-align: center; width:750px">Final Section</h1>
+<div class="sheet-3colrow">
+    <div class="sheet-col" style="width:245px">
+        <h3 style="text-align: center">Knacks</h3>
+    </div>
+    <div class="sheet-col" style="width:245px">
+        <h3 style="text-align: center">Languages</h3>
+    </div>
+    <div class="sheet-col" style="width:245px">
+        <h3 style="text-align: center">Bookkeeping</h3>
+    </div>
+</div>
+
+
+    <div class="sheet-col" style="width:245px"; style="align:center">
+        <input type="text" style="width:200px"/>
+        <input type="text" style="width:200px"/>
+        <input type="text" style="width:200px"/>
+        <input type="text" style="width:200px"/>
+        <input type="text" style="width:200px"/>
+        <input type="text" style="width:200px"/>
+		<input type="text" style="width:200px"/>
+		<input type="text" style="width:200px"/>
+		<input type="text" style="width:200px"/>
+		<input type="text" style="width:200px"/>
+		<input type="text" style="width:200px"/>
+		<input type="text" style="width:200px"/>
+		<input type="text" style="width:200px"/>
+
+		</div>	
+
+    
+	
+    <div class="sheet-col" style="width:245px"; style="align:center">
+        <input type="text" style="width:200px; align:center"/>
+        <input type="text" style="width:200px; align:center"/>
+        <input type="text" style="width:200px; align:center"/>
+        <input type="text" style="width:200px; align:center"/>
+        <input type="text" style="width:200px; align:center"/>
+        <input type="text" style="width:200px; align:center"/>
+		<input type="text" style="width:200px; align:center"/>
+		<input type="text" style="width:200px; align:center"/>
+		<input type="text" style="width:200px; align:center"/>
+		<input type="text" style="width:200px; align:center"/>
+		<input type="text" style="width:200px; align:center"/>
+		<input type="text" style="width:200px; align:center"/>
+		<input type="text" style="width:200px; align:center"/>
+
+		</div>	
+		
+<div class="sheet-col" style="width:230px">
+
+		 <div class="sheet2colrow"></div>
+    	<div class="sheet-col" style="width:150px">
+			<h4 style="text-align: left; line-height:28px">Experience:</h4> 
+			<h4 style="text-align: left;line-height:28px">Initiative Bonus:</h4>
+			<h4 style="text-align: left;line-height:28px">Wound Penalty:</h4>
+			<h4 style="text-align: left;line-height:28px">Armor Penalty:</h4>
+			</div>
+			
+			<div class="sheet-col" style="width:75px" align="right">
+			<input type="number" name="attr_experience" style="width:50px" /><BR>
+			<input type="number" name="attr_InitBonus" style="width:50px" value="0" /><BR>
+			<input type="number" name="attr_WoundPenalty" style="width:50px" value="[[(@{Hurt}+@{Wounded}+@{Maimed}+@{Crippled})]]" disabled="true" /><BR>
+			<input type="number" name="attr_ArmorPenalty" style="width:50px" value="0" />
+		
+
+</div>
+</div>
+<hr>
+    <br>
+    <h3 align="center">Notes</h3><BR>
+    <textarea name="attr_notes"></textarea>
+    <br>
+</div>
